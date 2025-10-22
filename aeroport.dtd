@@ -1,0 +1,44 @@
+<!ELEMENT aeroport (compagnies, pistes, avions, employes, vols)>
+
+<!ELEMENT compagnies (compagnie*)>
+<!ELEMENT compagnie (nom, pays, codeIATA)>
+<!ATTLIST compagnie id ID #REQUIRED>
+
+<!ELEMENT pistes (piste*)>
+<!ELEMENT piste (numero, longueur, localisation)>
+<!ATTLIST piste id ID #REQUIRED>
+
+<!ELEMENT avions (avion*)>
+<!ELEMENT avion (modele, capacite, immatriculation)>
+<!ATTLIST avion id ID #REQUIRED>
+
+<!ELEMENT employes (employe*)>
+<!ELEMENT employe (nom, prenom, age, role)>
+<!ATTLIST employe id ID #REQUIRED>
+
+<!ELEMENT vols (vol*)>
+<!ELEMENT vol (numero, date, destination, compagnieRef, avionRef, pisteRef, employesRefs)>
+<!ATTLIST vol id ID #REQUIRED>
+
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT pays (#PCDATA)>
+<!ELEMENT codeIATA (#PCDATA)>
+
+<!ELEMENT numero (#PCDATA)>
+<!ELEMENT longueur (#PCDATA)>
+<!ELEMENT localisation (#PCDATA)>
+
+<!ELEMENT modele (#PCDATA)>
+<!ELEMENT capacite (#PCDATA)>
+<!ELEMENT immatriculation (#PCDATA)>
+
+<!ELEMENT prenom (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT role (#PCDATA)>
+
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT destination (#PCDATA)>
+<!ELEMENT compagnieRef (#PCDATA)>
+<!ELEMENT avionRef (#PCDATA)>
+<!ELEMENT pisteRef (#PCDATA)>
+<!ELEMENT employesRefs (#PCDATA)>

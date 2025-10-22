@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aeroport SYSTEM "aeroport.dtd"> <!-- utile pour test DTD -->
+<aeroport><!-- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="aeroport.xsd -->
+  <compagnies>
+    <compagnie id="c1">
+      <nom>Air France</nom>
+      <pays>France</pays>
+      <codeIATA>AF</codeIATA>
+    </compagnie>
+    <compagnie id="c2">
+      <nom>Lufthansa</nom>
+      <pays>Allemagne</pays>
+      <codeIATA>LH</codeIATA>
+    </compagnie>
+  </compagnies>
+  <pistes>
+    <piste id="p1">
+      <numero>01</numero>
+      <longueur>3500</longueur> <!-- en mètres -->
+      <localisation>Nord</localisation>
+    </piste>
+    <piste id="p2">
+      <numero>02</numero>
+      <longueur>2800</longueur>
+      <localisation>Sud</localisation>
+    </piste>
+  </pistes>
+  <avions>
+    <avion id="a1">
+      <modele>Airbus A380</modele>
+      <capacite>500</capacite>
+      <immatriculation>F-AFGH</immatriculation>
+    </avion>
+    <avion id="a2">
+      <modele>Boeing 737</modele>
+      <capacite>180</capacite>
+      <immatriculation>D-LHXY</immatriculation>
+    </avion>
+    <avion id="a3">
+      <modele>Airbus A330</modele>
+      <capacite>320</capacite>
+      <immatriculation>F-AZ12</immatriculation>
+    </avion>
+  </avions>
+  <employes>
+    <employe id="e1">
+      <nom>Durand</nom>
+      <prenom>Paul</prenom>
+      <age>45</age>
+      <role>Pilote</role>
+    </employe>
+    <employe id="e2">
+      <nom>Martin</nom>
+      <prenom>Anne</prenom>
+      <age>32</age>
+      <role>CoPilote</role>
+    </employe>
+    <employe id="e3">
+      <nom>Bernard</nom>
+      <prenom>Luc</prenom>
+      <age>29</age>
+      <role>Agent Sol</role>
+    </employe>
+    <employe id="e4">
+      <nom>Petit</nom>
+      <prenom>Claire</prenom>
+      <age>38</age>
+      <role>Pilote</role>
+    </employe>
+  </employes>
+  <vols>
+    <vol id="v1">
+      <numero>AF100</numero>
+      <date>2023-02-15</date>
+      <destination>New York</destination>
+      <compagnieRef>c1</compagnieRef>
+      <avionRef>a1</avionRef>
+      <pisteRef>p1</pisteRef>
+      <employesRefs>e1 e2 e3</employesRefs> 
+    </vol>
+
+    <vol id="v2">
+      <numero>AF200</numero>
+      <date>2024-05-10</date>
+      <destination>Tokyo</destination>
+      <compagnieRef>c1</compagnieRef>
+      <avionRef>a3</avionRef>
+      <pisteRef>p2</pisteRef>
+      <employesRefs>e4 e2</employesRefs>
+    </vol>
+
+    <vol id="v3">
+      <numero>LH300</numero>
+      <date>2024-06-01</date>
+      <destination>Berlin</destination>
+      <compagnieRef>c2</compagnieRef>
+      <avionRef>a2</avionRef>
+      <pisteRef>p2</pisteRef>
+      <employesRefs>e3</employesRefs>
+    </vol>
+  </vols>
+</aeroport>

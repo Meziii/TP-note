@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="aeroport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="compagnies" type="CompagniesType"/>
+        <xs:element name="pistes" type="PistesType"/>
+        <xs:element name="avions" type="AvionsType"/>
+        <xs:element name="employes" type="EmployesType"/>
+        <xs:element name="vols" type="VolsType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CompagnieType">
+    <xs:sequence>
+      <xs:element name="nom" type="xs:string"/>
+      <xs:element name="pays" type="xs:string"/>
+      <xs:element name="codeIATA" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="CompagniesType">
+    <xs:sequence>
+      <xs:element name="compagnie" type="CompagnieType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Pistes -->
+  <xs:complexType name="PisteType">
+    <xs:sequence>
+      <xs:element name="numero" type="xs:string"/>
+      <xs:element name="longueur" type="xs:integer"/>
+      <xs:element name="localisation" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="PistesType">
+    <xs:sequence>
+      <xs:element name="piste" type="PisteType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AvionType">
+    <xs:sequence>
+      <xs:element name="modele" type="xs:string"/>
+      <xs:element name="capacite" type="xs:integer"/>
+      <xs:element name="immatriculation" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="AvionsType">
+    <xs:sequence>
+      <xs:element name="avion" type="AvionType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmployeType">
+    <xs:sequence>
+      <xs:element name="nom" type="xs:string"/>
+      <xs:element name="prenom" type="xs:string"/>
+      <xs:element name="age" type="xs:integer"/>
+      <xs:element name="role" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="EmployesType">
+    <xs:sequence>
+      <xs:element name="employe" type="EmployeType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VolType">
+    <xs:sequence>
+      <xs:element name="numero" type="xs:string"/>
+      <xs:element name="date" type="xs:date"/>
+      <xs:element name="destination" type="xs:string"/>
+      <xs:element name="compagnieRef" type="xs:IDREF"/>
+      <xs:element name="avionRef" type="xs:IDREF"/>
+      <xs:element name="pisteRef" type="xs:IDREF"/>
+      <xs:element name="employesRefs" type="xs:IDREFS"/> <!-- plusieurs refs séparées par espaces -->
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="VolsType">
+    <xs:sequence>
+      <xs:element name="vol" type="VolType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
