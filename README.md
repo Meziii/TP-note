@@ -31,7 +31,7 @@ Le projet est accompagné d'un compte rendu détaillé expliquant la méthodolog
 1. **Cloner le dépôt** :
 
 ```bash
-git clone <URL_DU_DEPOT>
+git clone https://github.com/Meziii/TP-note
 ```
 
 2. **Ouvrir le fichier XML** dans BaseX ou tout autre éditeur XML.
